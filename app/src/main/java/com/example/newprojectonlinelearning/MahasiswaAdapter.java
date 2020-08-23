@@ -45,31 +45,13 @@ public class MahasiswaAdapter extends RecyclerView.Adapter<MahasiswaAdapter.Maha
 
     @Override
     public void onBindViewHolder(final MahasiswaViewHolder holder, final int position) {
-//        holder.txtNama.setText(dataList.get(position).getId()+" , "+dataList.get(position).getNama());
         holder.txtNama.setText(dataList.get(position).getOriginal_title());
         holder.txtNpm.setText(dataList.get(position).getOverview());
-        Glide
-                .with(holder.itemView.getContext())
+        Glide.with(holder.itemView.getContext())
                 .load(dataList.get(position).getPoster_path())
                 .centerCrop()
                 .placeholder(R.mipmap.ic_launcher)
                 .into(holder.ivprofile);
-
-//        holder.txtAlamat.setText(dataList.get(position).getAlamat());
-
-//        holder.card.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Toast.makeText(holder.itemView.getContext(), ""+position, Toast.LENGTH_SHORT).show();
-//                Intent in =new Intent(holder.itemView.getContext().getApplicationContext(), EditData.class);
-//                in.putExtra("id",dataList.get(position).getId());
-//                in.putExtra("nama",dataList.get(position).getNama());
-//                in.putExtra("pesanan",dataList.get(position).getPesanan());
-//                in.putExtra("no-hp",dataList.get(position).getNo_hp());
-//                in.putExtra("alamat",dataList.get(position).getAlamat());
-//                holder.itemView.getContext().startActivity(in);
-//            }
-//        });
     }
 
     @Override
@@ -89,8 +71,6 @@ public class MahasiswaAdapter extends RecyclerView.Adapter<MahasiswaAdapter.Maha
             ivprofile = (ImageView) itemView.findViewById(R.id.ivprofile);
             txtNama = (TextView) itemView.findViewById(R.id.tvname);
             txtNpm = (TextView) itemView.findViewById(R.id.tvdesc);
-//            txtNoHp = (TextView) itemView.findViewById(R.id.txt_nohp_mahasiswa);
-//            txtAlamat = (TextView) itemView.findViewById(R.id.txt_alamat);
             itemView.setOnCreateContextMenuListener(this);
 
             itemView.setOnClickListener(new View.OnClickListener() {
