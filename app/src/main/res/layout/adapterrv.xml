@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <androidx.cardview.widget.CardView
+    android:id="@+id/cardku"
     android:layout_margin="10dp"
     android:elevation="10dp"
     app:cardElevation="10dp"
@@ -16,6 +17,7 @@
         android:layout_height="wrap_content">
 
         <ImageView
+            android:padding="5dp"
             android:id="@+id/ivprofile"
             android:src="@mipmap/ic_launcher"
             android:layout_width="wrap_content"
