@@ -9,6 +9,8 @@
     tools:context=".CekGambar">
 
     <ImageView
+        android:layout_gravity="center"
+        android:src="@mipmap/ic_launcher"
         android:id="@+id/ivcobagambar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
