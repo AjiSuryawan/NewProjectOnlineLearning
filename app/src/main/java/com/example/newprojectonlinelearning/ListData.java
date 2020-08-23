@@ -28,7 +28,7 @@ public class ListData extends AppCompatActivity {
         mahasiswaArrayList = new ArrayList<>();
         Model data1 = new Model();
         data1.setOriginal_title("Makanan");
-        data1.setPoster_path("https://cdn0.iconfinder.com/data/icons/customicondesignoffice5/256/schedule.png");
+        data1.setPoster_path("https://image.tmdb.org/t/p/w500/k68nPLbIST6NP96JmTxmZijEvCA.jpg");
         data1.setAdult(false);
         data1.setOverview("Makanan ini enak sekali");
         data1.setVote_count(100);

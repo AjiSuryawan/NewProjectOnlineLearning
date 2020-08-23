@@ -48,11 +48,10 @@ public class MahasiswaAdapter extends RecyclerView.Adapter<MahasiswaAdapter.Maha
     public void onBindViewHolder(final MahasiswaViewHolder holder, final int position) {
         holder.txtNama.setText(dataList.get(position).getOriginal_title());
         holder.txtNpm.setText(dataList.get(position).getOverview());
-        Glide.with(holder.itemView.getContext())
+        Glide.with(holder.itemView.getContext()
+                .getApplicationContext())
                 .load(dataList.get(position).getPoster_path())
-                .placeholder(R.mipmap.ic_launcher)
-                .dontTransform()
-                .override(Target.SIZE_ORIGINAL, Target.SIZE_ORIGINAL)
+                .override(Target.SIZE_ORIGINAL)
                 .into(holder.ivprofile);
 
     }
