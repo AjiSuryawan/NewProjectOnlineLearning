@@ -15,6 +15,7 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.target.Target;
 
 import java.util.ArrayList;
 
@@ -49,9 +50,11 @@ public class MahasiswaAdapter extends RecyclerView.Adapter<MahasiswaAdapter.Maha
         holder.txtNpm.setText(dataList.get(position).getOverview());
         Glide.with(holder.itemView.getContext())
                 .load(dataList.get(position).getPoster_path())
-                .centerCrop()
                 .placeholder(R.mipmap.ic_launcher)
+                .dontTransform()
+                .override(Target.SIZE_ORIGINAL, Target.SIZE_ORIGINAL)
                 .into(holder.ivprofile);
+
     }
 
     @Override
@@ -60,7 +63,7 @@ public class MahasiswaAdapter extends RecyclerView.Adapter<MahasiswaAdapter.Maha
     }
 
     public class MahasiswaViewHolder extends RecyclerView.ViewHolder implements View.OnCreateContextMenuListener{
-        private TextView txtNama, txtNpm, txtNoHp, txtAlamat;
+        private TextView txtNama, txtNpm;
         CardView card;
         ImageView ivprofile;
 
