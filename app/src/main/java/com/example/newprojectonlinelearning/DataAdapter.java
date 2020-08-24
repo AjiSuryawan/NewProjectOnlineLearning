@@ -19,7 +19,7 @@ import com.bumptech.glide.request.target.Target;
 
 import java.util.ArrayList;
 
-public class MahasiswaAdapter extends RecyclerView.Adapter<MahasiswaAdapter.MahasiswaViewHolder> {
+public class DataAdapter extends RecyclerView.Adapter<DataAdapter.DatakuViewHolder> {
     private ArrayList<Model> dataList;
     private Callback callback;
     View viewku;
@@ -31,21 +31,21 @@ public class MahasiswaAdapter extends RecyclerView.Adapter<MahasiswaAdapter.Maha
     }
 
 
-    public MahasiswaAdapter(ArrayList<Model> dataList, Callback callback) {
+    public DataAdapter(ArrayList<Model> dataList, Callback callback) {
         this.callback = callback;
         this.dataList = dataList;
         Log.d("makanan", "MahasiswaAdapter: "+dataList.size()+"");
     }
 
     @Override
-    public MahasiswaViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public DatakuViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
         View view = layoutInflater.inflate(R.layout.adapterrv, parent, false);
-        return new MahasiswaViewHolder(view);
+        return new DatakuViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(final MahasiswaViewHolder holder, final int position) {
+    public void onBindViewHolder(final DatakuViewHolder holder, final int position) {
         holder.txtNama.setText(dataList.get(position).getOriginal_title());
         holder.txtNpm.setText(dataList.get(position).getOverview());
         Log.d("makananku", "onBindViewHolder: "+dataList.get(position).getPoster_path());
@@ -62,12 +62,12 @@ public class MahasiswaAdapter extends RecyclerView.Adapter<MahasiswaAdapter.Maha
         return (dataList != null) ? dataList.size() : 0;
     }
 
-    public class MahasiswaViewHolder extends RecyclerView.ViewHolder implements View.OnCreateContextMenuListener{
+    public class DatakuViewHolder extends RecyclerView.ViewHolder implements View.OnCreateContextMenuListener{
         private TextView txtNama, txtNpm;
         CardView card;
         ImageView ivprofile;
 
-        public MahasiswaViewHolder(View itemView) {
+        public DatakuViewHolder(View itemView) {
             super(itemView);
             viewku=itemView;
             card = (CardView) itemView.findViewById(R.id.cardku);

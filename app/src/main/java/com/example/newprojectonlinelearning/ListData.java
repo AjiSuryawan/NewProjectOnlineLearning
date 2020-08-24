@@ -12,7 +12,7 @@ import java.util.ArrayList;
 public class ListData extends AppCompatActivity {
 
     private RecyclerView recyclerView;
-    private MahasiswaAdapter adapter;
+    private DataAdapter adapter;
     private ArrayList<Model> mahasiswaArrayList;
     private ImageView tambah_data;
 
@@ -36,7 +36,7 @@ public class ListData extends AppCompatActivity {
         mahasiswaArrayList.add(data1);
 
 
-        adapter = new MahasiswaAdapter(mahasiswaArrayList, new MahasiswaAdapter.Callback() {
+        adapter = new DataAdapter(mahasiswaArrayList, new DataAdapter.Callback() {
             @Override
             public void onClick(int position) {
 
