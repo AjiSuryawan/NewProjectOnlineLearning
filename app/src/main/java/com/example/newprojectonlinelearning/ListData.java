@@ -13,7 +13,7 @@ public class ListData extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private DataAdapter adapter;
-    private ArrayList<Model> mahasiswaArrayList;
+    private ArrayList<Model> DataArrayList; //kit add kan ke adapter
     private ImageView tambah_data;
 
     @Override
@@ -25,18 +25,19 @@ public class ListData extends AppCompatActivity {
     }
 
     void addData() {
-        mahasiswaArrayList = new ArrayList<>();
+        //offline, isi data offline dulu
+        DataArrayList = new ArrayList<>();
         Model data1 = new Model();
-        data1.setOriginal_title("Makanan");
+        data1.setOriginal_title("Judul Film");
         data1.setPoster_path("https://image.tmdb.org/t/p/w500/k68nPLbIST6NP96JmTxmZijEvCA.jpg");
         data1.setAdult(false);
-        data1.setOverview("Makanan ini enak sekali");
+        data1.setOverview("Deskripsi Film disini");
         data1.setVote_count(100);
         data1.setRelease_date("01-01-2020");
-        mahasiswaArrayList.add(data1);
+        DataArrayList.add(data1);
 
 
-        adapter = new DataAdapter(mahasiswaArrayList, new DataAdapter.Callback() {
+        adapter = new DataAdapter(DataArrayList, new DataAdapter.Callback() {
             @Override
             public void onClick(int position) {
 
