@@ -14,7 +14,7 @@
         android:layout_height="140dp"
         android:layout_gravity="center"
         android:layout_marginTop="80dp"
-        android:background="@mipmap/logobaru"/>
+        android:src="@mipmap/logobaru"/>
 
     <TextView
         android:layout_width="match_parent"
