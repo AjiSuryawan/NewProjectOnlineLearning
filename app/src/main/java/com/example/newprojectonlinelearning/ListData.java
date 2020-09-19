@@ -90,6 +90,7 @@ public class ListData extends AppCompatActivity {
                             for (int i = 0; i < jsonArray.length(); i++) {
                                 modelku = new Model();
                                 JSONObject jsonObject = jsonArray.getJSONObject(i);
+                                modelku.setId(jsonObject.getInt("id"));
                                 modelku.setOriginal_title(jsonObject.getString("original_title"));
                                 modelku.setOverview(jsonObject.getString("overview"));
                                 modelku.setRelease_date(jsonObject.getString("release_date"));
@@ -104,6 +105,7 @@ public class ListData extends AppCompatActivity {
                                 public void onClick(int position) {
                                     Model movie = DataArrayList.get(position);
                                     Intent intent = new Intent(getApplicationContext(), DetailMovie.class);
+                                    intent.putExtra("id",movie.id);
                                     intent.putExtra("judul",movie.original_title);
                                     intent.putExtra("date",movie.release_date);
                                     intent.putExtra("deskripsi",movie.overview);
