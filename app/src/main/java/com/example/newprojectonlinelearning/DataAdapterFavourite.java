@@ -18,9 +18,10 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class DataAdapterFavourite extends RecyclerView.Adapter<DataAdapterFavourite.DatakuViewHolder> {
-    private ArrayList<ModelMovieRealm> dataList;
+    private List<ModelMovieRealm> dataList;
     private Callback callback;
     View viewku;
     int posku;
@@ -31,7 +32,7 @@ public class DataAdapterFavourite extends RecyclerView.Adapter<DataAdapterFavour
     }
 
 
-    public DataAdapterFavourite(ArrayList<ModelMovieRealm> dataList, Callback callback) {
+    public DataAdapterFavourite(List<ModelMovieRealm> dataList, Callback callback) {
         this.callback = callback;
         this.dataList = dataList;
         Log.d("makanan", "MahasiswaAdapter: "+dataList.size()+"");
