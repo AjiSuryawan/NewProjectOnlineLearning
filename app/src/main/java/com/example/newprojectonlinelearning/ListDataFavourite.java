@@ -47,7 +47,7 @@ public class ListDataFavourite extends AppCompatActivity {
         adapter = new DataAdapterFavourite(DataArrayList, new DataAdapterFavourite.Callback() {
             @Override
             public void onClick(int position) {
-
+                //intent ke detail movie
             }
 
             @Override
