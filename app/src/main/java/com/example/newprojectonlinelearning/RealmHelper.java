@@ -44,4 +44,14 @@ public class RealmHelper {
         return results;
     }
 
+    public void delete(Integer id){
+        final RealmResults<ModelMovieRealm> model = realm.where(ModelMovieRealm.class).equalTo("id", id).findAll();
+        realm.executeTransaction(new Realm.Transaction() {
+            @Override
+            public void execute(Realm realm) {
+                model.deleteFromRealm(0);
+            }
+        });
+    }
+
 }
