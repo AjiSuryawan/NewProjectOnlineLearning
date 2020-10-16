@@ -47,7 +47,10 @@ public class ListDataFavourite extends AppCompatActivity {
         adapter = new DataAdapterFavourite(DataArrayList, new DataAdapterFavourite.Callback() {
             @Override
             public void onClick(int position) {
-                //intent ke detail movie
+                Intent move = new Intent(getApplicationContext(), DetailFavourite.class);
+                move.putExtra("title",DataArrayList.get(position).getJudul());
+                // picture, desc, release, dll
+                startActivity(move);
             }
 
             @Override
