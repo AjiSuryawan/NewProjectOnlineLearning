@@ -11,6 +11,6 @@ public class DetailFavourite extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_favourite);
         //get extra
-
+        // data tersebut tampilkan disini, jadi kalian harus layout
     }
 }
