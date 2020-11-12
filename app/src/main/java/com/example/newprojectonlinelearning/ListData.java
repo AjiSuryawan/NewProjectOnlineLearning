@@ -8,7 +8,9 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -24,6 +26,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 public class ListData extends AppCompatActivity {
+    TextView tvnodata;
     ProgressDialog dialog;
     RecyclerView recyclerView;
     DataAdapter adapter;
@@ -36,6 +39,9 @@ public class ListData extends AppCompatActivity {
         setContentView(R.layout.activity_list_data);
         recyclerView = (RecyclerView) findViewById(R.id.rvdata);
         dialog = new ProgressDialog(ListData.this);
+        tvnodata = (TextView) findViewById(R.id.tvnodata);
+        tvnodata.setVisibility(View.GONE);
+        recyclerView.setVisibility(View.VISIBLE);
         //addData();
         addDataOnline();
     }
