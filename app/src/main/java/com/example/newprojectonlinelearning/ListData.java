@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -23,17 +24,18 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 public class ListData extends AppCompatActivity {
-
-    private RecyclerView recyclerView;
-    private DataAdapter adapter;
-    private ArrayList<Model> DataArrayList; //kit add kan ke adapter
-    private ImageView tambah_data;
+    ProgressDialog dialog;
+    RecyclerView recyclerView;
+    DataAdapter adapter;
+    ArrayList<Model> DataArrayList; //kit add kan ke adapter
+    ImageView tambah_data;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_data);
         recyclerView = (RecyclerView) findViewById(R.id.rvdata);
+        dialog = new ProgressDialog(ListData.this);
         //addData();
         addDataOnline();
     }
@@ -71,6 +73,10 @@ public class ListData extends AppCompatActivity {
     }
 
     void addDataOnline(){
+        //kasih loading
+        dialog.setMessage("Sedang memproses data");
+        dialog.show();
+        // background process
         AndroidNetworking.get("https://api.themoviedb.org/3/movie/now_playing?api_key=6ac7a042ac3b7599a689eb943fa0b6d0&language=en-US")
                 .setTag("test")
                 .setPriority(Priority.LOW)
@@ -122,8 +128,14 @@ public class ListData extends AppCompatActivity {
                             RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(ListData.this);
                             recyclerView.setLayoutManager(layoutManager);
                             recyclerView.setAdapter(adapter);
+                            if (dialog.isShowing()) {
+                                dialog.dismiss();
+                            }
                         } catch (JSONException e) {
                             e.printStackTrace();
+                            if (dialog.isShowing()) {
+                                dialog.dismiss();
+                            }
                         }
 
                     }
