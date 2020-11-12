@@ -137,7 +137,7 @@ public class DataAdapterFavourite extends RecyclerView.Adapter<DataAdapterFavour
                     };
 
                     AlertDialog.Builder builder = new AlertDialog.Builder(viewku.getContext());
-                    builder.setMessage("Are you sure?").setPositiveButton("Yes", dialogClickListener)
+                    builder.setMessage("Are you sure want to delete ?").setPositiveButton("Yes", dialogClickListener)
                             .setNegativeButton("No", dialogClickListener).show();
                     break;
             }
