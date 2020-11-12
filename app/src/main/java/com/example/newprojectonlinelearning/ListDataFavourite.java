@@ -40,7 +40,9 @@ public class ListDataFavourite extends AppCompatActivity {
         DataArrayList = realmHelper.getAllMovie();
         if (DataArrayList.size() == 0){
             tvnodata.setVisibility(View.VISIBLE);
+            recyclerView.setVisibility(View.GONE);
         }else{
+            tvnodata.setVisibility(View.GONE);
             recyclerView.setVisibility(View.VISIBLE);
             adapter = new DataAdapterFavourite(DataArrayList, new DataAdapterFavourite.Callback() {
                 @Override
