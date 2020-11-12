@@ -41,7 +41,7 @@ public class ListDataFavourite extends AppCompatActivity {
                 move.putExtra("path",DataArrayList.get(position).getPath());
                 move.putExtra("date",DataArrayList.get(position).getReleaseDate());
                 move.putExtra("deskripsi",DataArrayList.get(position).getDesc());
-
+                // di putextra yang lain
                 startActivity(move);
             }
 
